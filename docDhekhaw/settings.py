@@ -30,6 +30,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+#cors fix
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_ALL_ORIGINS=True
+
+CSRF_TRUSTED_ORIGINS = ['https://docdekhaw.onrender.com']
 
 # Application definition
 
@@ -40,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "corsheaders",
     'rest_framework',
     'rest_framework.authtoken',
     'appointment',
@@ -50,6 +56,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
