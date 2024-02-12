@@ -17,10 +17,10 @@ class DesignationViewset(viewsets.ModelViewSet):
     serializer_class = serializers.DesignationSerializer
 
 #page number diye sob data size kra
-# class DoctorPagination(pagination.PageNumberPagination):
-#     page_size = 1 # items per page
-#     page_size_query_param = page_size
-#     max_page_size = 100
+class DoctorPagination(pagination.PageNumberPagination):
+    page_size = 1 # items per page
+    page_size_query_param = page_size
+    max_page_size = 100
 
 
 
